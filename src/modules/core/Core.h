@@ -5,9 +5,9 @@
 #ifndef NETHERITE_CORE_H
 #define NETHERITE_CORE_H
 
-#include "module/Module.h"
-#include "thread/Thread.h"
-#include "control/Control.h"
+#include "../module/Module.h"
+#include "../thread/Thread.h"
+#include "../control/Control.h"
 
 namespace Netherite {
 class Core : public Netherite::Module {

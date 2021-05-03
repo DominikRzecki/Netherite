@@ -64,14 +64,6 @@ namespace Netherite {
             return _thread;
         }
 
-        inline const Module &get_owner() const {
-            return _owner;
-        }
-
-        inline void set_owner(const Module &owner) {
-            _owner = owner;
-        }
-
     private:
 
         template<typename Callable, typename... Args>
@@ -86,6 +78,8 @@ namespace Netherite {
         }
 
     private:
+
+
 
         std::thread _thread;
         std::atomic<bool> _enabled {true};
