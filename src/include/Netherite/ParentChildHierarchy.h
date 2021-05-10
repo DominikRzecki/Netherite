@@ -9,8 +9,6 @@
 #include <exception>
 #include <cassert>
 
-
-
 namespace Netherite {
     template<class T>
     class ParentChildHierarchy {
@@ -22,7 +20,7 @@ namespace Netherite {
         }
 
         inline T &parent() const {
-            return *_parent;
+            return (_parent) ? *_parent : *invalid;
         }
 
         inline void attach(T &parent) {
@@ -51,6 +49,7 @@ namespace Netherite {
         }
 
         const std::vector<T *>& children{_children};
+        static ParentChildHierarchy<T>* invalid;
 
     protected:
 
@@ -64,7 +63,7 @@ namespace Netherite {
         }
 
     private:
-        T *_parent{};
+        T *_parent{ nullptr };
         std::vector<T *> _children;
     };
 }
